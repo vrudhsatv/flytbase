@@ -3,7 +3,7 @@ name: Deploy WebSocket App to EKS
 on:
   push:
     branches:
-      - main
+      - master
 
 env:
   DOCKER_IMAGE_BACKEND: dhruv789/websocket-server
