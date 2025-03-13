@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebSocket Test</title>
+</head>
+<body>
+    <h1>System monitor performance</h1>
+    <button onclick="sendMessage()">Send Message</button>
+    <p id="response"></p>
+    
+    <script>
+        
+        let socket = new WebSocket("ws://localhost:12345");
+
+        socket.onmessage = function(event) {
+            document.getElementById("response").innerText = event.data;
+        };
+
+        function sendMessage() {
+            socket.send("System monitoring performance");
+        }
+    </script>
+</body>
+</html>
